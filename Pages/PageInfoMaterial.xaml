@@ -12,21 +12,20 @@
         <ScrollViewer >
             <StackPanel Orientation="Vertical">
                 <TextBox Name="TxtSearch" Width="700" Height="25" Margin="5" PreviewTextInput="TxtSearch_PreviewTextInput"/>
-                <ListBox x:Name="ListMaterial" Background="Transparent" Width="650" BorderBrush="Transparent">
+                <ListBox x:Name="ListMaterial" Background="Transparent" Width="700" BorderBrush="Transparent">
                     <ListBox.ItemTemplate>
                         <DataTemplate>
-                            <ListBoxItem BorderBrush="Black"  Background="White" Width="620">
-                                <StackPanel Orientation="Vertical">
-                                    <TextBlock Name="StringImage" Visibility="Hidden" Text="{Binding MainImagepath,StringFormat=Title}" Style="{StaticResource mainTextb}"/>
-                                    <Image Source="{Binding Text,ElementName=StringImage}" Style="{StaticResource ImgSource}"/>
-                                    <TextBlock Text="{Binding Title}" Name="TxtNameProduct" FontFamily="Segoe Print" FontSize="17"  />
-                                
+                            <ListBoxItem BorderBrush="Black"  Background="White" Width="690">
                                 <StackPanel Orientation="Horizontal">
-                                        <TextBlock  Text="{Binding Cost}" />
-                                        <TextBlock  Text="рублей " />
+                                    <StackPanel >
+                                        <Image Source="{Binding Text,ElementName=StringImage}" Margin="0 15 0 0" Width="250" Height="250"/>
+                                        <TextBlock Name="StringImage" Visibility="Hidden" Text="{Binding Image,StringFormat=Title}" />
                                     </StackPanel>
-                                    <StackPanel Orientation="Horizontal" HorizontalAlignment="Left">
-                                        <Button Name ="BtnEdit" Content="Редактирование" />
+                                    <StackPanel  Orientation="Horizontal" Margin="10 15 0 0" HorizontalAlignment="Center">
+                                        <TextBlock  Text="Тип материалла: " />
+                                        <TextBlock  Text="{Binding MaterialType.Title}" />
+                                        <TextBlock  Text="  |  " />
+                                        <TextBlock  Text="{Binding Title}" />
                                     </StackPanel>
                                 </StackPanel>
                             </ListBoxItem>
